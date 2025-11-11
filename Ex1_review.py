@@ -40,10 +40,9 @@ print("-------------------------------------------\n"
 # Hint: Remember to use f-strings for clear formatting.
 #
 # Write your code below:
-
-
-
-
+name = input("Enter your name: ").strip()
+age = int(input("Enter your age: "))
+print(f"Hello, {name}! You are {age} years old.")
 # Task 2: Decision Making (if / else)
 # -------------------------------------------
 print("-------------------------------------------\n"
@@ -64,10 +63,13 @@ print("-------------------------------------------\n"
 # Output: "Nice choice!"
 #
 # Write your code below:
-
-
-
-
+colour = input("Enter your favourite colour: ").lower()
+if colour == "blue":
+    print("Nice choice!")
+elif colour == "yellow":
+    print("That’s a bright choice!")
+else:
+    print("That’s an interesting colour!")
 # Task 3: Loops Review (for and while)
 # -------------------------------------------
 print("-------------------------------------------\n"
@@ -96,8 +98,13 @@ print("-------------------------------------------\n"
 # (loops again)
 #
 # Write your code below:
-
-
+repeat = "yes"
+while repeat.lower() == "yes":
+    num = int(input("Enter a number between 1 and 10: "))
+    print(f"Multiplication table for {num}:")
+    for i in range(1, 11):
+        print(f"{num} x {i} = {num * i}")
+    repeat = input("Do you want to try another number? (yes/no): ")
 
 
 # -------------------------------------------
@@ -134,8 +141,9 @@ print("-------------------------------------------\n"
 # Output: "Your username could be: alice7"
 #
 # Write your code below:
-
-
+first_name = input("Enter your first name: ").lower()
+fav_number = input("Enter your favourite number: ")
+username = first_name + fav_number
 
 
 # Extension 2: Counting with Conditions
@@ -155,6 +163,12 @@ print("-------------------------------------------\n"
 # Example: if num % 2 == 0 → even number.
 #
 # Write your code below:
+num = int(input("Enter a number: "))
+for i in range(1, num + 1):
+    if i % 2 == 0:
+        print(f"{i} - Even number found!")
+    else:
+        print(f"{i} - Odd number found!")
 
 
 
@@ -182,6 +196,19 @@ print("-------------------------------------------\n"
 # Output: Access granted.
 #
 # Write your code below:
+password = "python123"
+attempts = 0
+user_input = ""
+while attempts < 3 and user_input != password:
+    user_input = input("Enter password: ").strip().lower()
+    if user_input == password:
+        print("Access granted.")
+        break
+    else:
+        print("Access denied.")
+        attempts += 1
+if user_input != password:   
+    print("Too many attempts. Access locked.")
 
 
 
